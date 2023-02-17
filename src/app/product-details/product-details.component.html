@@ -1,0 +1,125 @@
+<!-- Top Section of Products Details -->
+<div class="TopContainer ms-5">
+  <h3 class="font-weight-bold">Product Details</h3>
+</div>
+
+<!-- Product Detail Section -->
+<div class="row ms-5 me-5 mt-5 shadow-lg TableDiv">
+  <div class="TableDiv mb-3" >
+
+    <img src="{{products?.ProductData?.Product_Image}}" class="float-start zoom2" width="288" height="177">
+
+    <div class="float-start ms-5 mt-3">
+      <h3 class="HeadingStyle">{{products?.ProductData?.PRODUCT_NAME}}</h3>
+      <p>Category: <b>{{products?.ProductData?.Categories}}</b></p>
+      <p>Brand: <b>{{products?.ProductData?.Brands}}</b></p>
+      <p>Product Page:
+        <a href="{{products?.ProductData?.Product_Link}}" target="_blank">
+        <button class="btn btn-primary btn-md ms-2" style="border-radius: 20px;">
+          Open Link
+        </button>
+      </a>
+      </p>
+    </div>
+
+    <div class="Button float-end mt-3">
+
+      <button class="btn btn-primary btn-md" style="border-radius: 20px;">
+        Edit Product
+      </button>
+
+      <button class="btn btn-primary btn-md ms-2 dropdown-toggle" style="border-radius: 20px;">
+        Actions
+      </button>
+
+      <button class="btn btn-primary btn-md ms-2 dropdown-toggle" style="border-radius: 20px;">
+        Toggle Columns
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="Button float-start mt-5 mb-2">
+
+    <button class="btn btn-primary btn-md tablebtnTop" style="border-radius: 20px;">
+      Competitors
+    </button>
+
+    <button class="btn btn-primary btn-md ms-2 tablebtnTop" style="border-radius: 20px;">
+      Price History
+    </button>
+
+  </div>
+
+  <table class="table tableStyle table-borderless table-sm">
+    <thead>
+      <tr>
+        <th scope="col">
+          <div>
+          </div>
+        </th>
+        <th scope="col">Product Name</th>
+        <th scope="col">ID/SKU</th>
+        <!-- <th scope="col">Cost Price</th> -->
+        <th scope="col">My Price</th>
+        <!-- <th scope="col">Shipping Cost</th> -->
+        <!-- <th scope="col">Price Match</th> -->
+        <th scope="col">Stock</th>
+        <!-- <th scope="col">Gross Profit</th>
+        <th scope="col">Gross Profit Ratio</th> -->
+        <!-- <th scope="col">Info</th>
+        <th scope="col">Position</th> -->
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row">
+          <div class="float-start me-2 ms-2 zoom shadow-lg">
+            <!-- Product Image -->
+            <a href="{{products?.ProductData?.Product_Link}}" target="_blank">
+              <img src="{{products?.ProductData?.Product_Image}}" class="float-start" width="40" height="40">
+            </a>
+          </div>
+        </td>
+        <td>{{products?.ProductData?.PRODUCT_NAME}}</td>
+        <td *ngIf=" products!.ProductData.Product_ID === '' ">NULL</td>
+        <td *ngIf=" products!.ProductData.Product_ID != '' ">{{products!.ProductData.Product_ID}}</td>
+        <!-- <td>-</td> -->
+        <td>${{products?.ProductData?.Product_Price}}</td>
+        <!-- <td>-</td>
+        <td>-</td> -->
+        <td>{{products?.ProductData?.Product_Stock}}</td>
+        <!-- <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>Undefined</td> -->
+        <!-- <td>
+          <button class="btn btn-primary btn-sm tablebtnSecondary mt-1" style="border-radius: 20px;">
+            Change Price
+          </button>
+          <button class="btn btn-primary btn-sm tablebtnSecondary ms-1 mt-1" style="border-radius: 20px;">
+            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M5.24432 11.7571V0.0383516H7.23295V11.7571H5.24432ZM0.379262 6.89205V4.90341H12.098V6.89205H0.379262Z"
+                fill="white" />
+            </svg>
+
+          </button>
+        </td> -->
+        <!-- <td>
+          <button class="btn btn-sm btntable float-end">
+            <svg width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16.25 15H21.25V17.5H16.25V15ZM16.25 5H25V7.5H16.25V5ZM16.25 10H23.75V12.5H16.25V10ZM1.25 17.5C1.25 18.875 2.375 20 3.75 20H11.25C12.625 20 13.75 18.875 13.75 17.5V5H1.25V17.5ZM15 1.25H11.25L10 0H5L3.75 1.25H0V3.75H15V1.25Z"
+                fill="#184777" />
+            </svg>
+          </button>
+        </td> -->
+      </tr>
+    </tbody>
+  </table>
+
+</div>

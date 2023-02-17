@@ -1,0 +1,92 @@
+<div class="container">
+
+  <!-- Top Section of Add Rules -->
+  <div class="TopContainer ms-5">
+    <h4 class="font-weight-bold">Filter products</h4>
+  </div>
+
+  <!-- Button and Toggles -->
+  <div class="Button ms-5 mt-5">
+
+    <button class="btn btn-primary btn-md col-1" routerLink="/home/addrules" style="border-radius: 20px;">
+      Back
+    </button>
+
+  </div>
+
+  <div class="TableDiv ms-5 me-5 mt-3 shadow-lg">
+
+    <div class="row ms-0">
+
+      <form>
+        <h5 class="col-lg-12 mt-2"><b>Filter products</b></h5>
+        <div class="row ms-3">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault1"  value='byproducts' [formControl]="filterproductrules">
+            <label class="form-check-label" for="flexRadioDefault1">
+              By favorite products
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input mt-2" type="radio" name="flexRadioDefault2" id="flexRadioDefault2" value='bybrands' [formControl]="filterproductrules">
+            <label class="form-check-label" for="flexRadioDefault2">
+              By favorite brands
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input mt-2" type="radio" name="flexRadioDefault2" id="flexRadioDefault3" value='bycategories' [formControl]="filterproductrules">
+            <label class="form-check-label" for="flexRadioDefault3">
+              By favorite categories
+            </label>
+          </div>
+        </div>
+      </form>
+
+      <form>
+        <h5 class="col-lg-12 mt-3"><b>Matching criteria</b></h5>
+        <div class="row ms-3">
+          <div class="form-check">
+            <input class="form-check-input mt-2" type="radio" name="flexRadioDefault" id="flexRadioDefault4" value='any' [formControl]="matchingcriteria">
+            <label class="form-check-label mt-1" for="flexRadioDefault4">
+              Any
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input mt-2" type="radio" name="flexRadioDefault" id="flexRadioDefault5" value='all' [formControl]="matchingcriteria">
+            <label class="form-check-label mt-1" for="flexRadioDefault5">
+              All
+            </label>
+          </div>
+        </div>
+      </form>
+
+      <form>
+        <h5 class=" col-lg-12 mt-3"><b>Use only favorite competitors on repricing</b></h5>
+        <div class="row ms-3">
+          <div class="form-check">
+            <input class="form-check-input mt-2" type="radio" name="flexRadioDefault1" id="flexRadioDefault6" value='yes' [formControl]="fvtcompetitors">
+            <label class="form-check-label mt-1" for="flexRadioDefault6">
+              Yes
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input mt-2" type="radio" name="flexRadioDefault1" id="flexRadioDefault7" value='no' [formControl]="fvtcompetitors">
+            <label class="form-check-label mt-1" for="flexRadioDefault7">
+              No
+            </label>
+          </div>
+        </div>
+        <h5 class="col-lg-12 mt-3"><b>Filter products by Brands</b></h5>
+        <input type="rule"  class="form-control col-lg-4 ms-2"  id="filterbrands" [formControl]="filterbrands">
+
+        <h5 class="col-lg-12 mt-4"><b>Filter products by Category</b></h5>
+        <input type="rule"  class="form-control col-lg-4 ms-2"  id="filtercategory" [formControl]="filtercategory">
+
+        <button class="btn btn-primary mt-3 btnnewbtn col-2 ms-1 mb-5" style="border-radius: 20px;" type="submit" (click)="FilterProducts()">Save
+          Settings</button>
+      </form>
+
+    </div>
+  </div>
+
+</div>
